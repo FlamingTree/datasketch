@@ -11,7 +11,7 @@ import (
 )
 
 const UpperBound uint64 = math.MaxUint64
-const DefaultPrecision = 4096
+var DefaultPrecision = 4096
 
 type ThetaSketch struct {
 	precision int
