@@ -1,8 +1,9 @@
 package hllsketch
 
 import (
-	"datasketch"
+	"github.com/FlamingTree/datasketch"
 	"github.com/spaolacci/murmur3"
+	"fmt"
 	"hash"
 	"math"
 )
@@ -60,7 +61,7 @@ func (hll *HllSketch) Union(sketch datasketch.Sketch) (datasketch.Sketch, error)
 		return nil, datasketch.NoCompatibleTypeError(hll.String(), sketch.String(), "union")
 	} else {
 		if other.bucketN != hll.bucketN {
-			return nil, datasketch.NoCompatibleTypeError(hll.String()+":"+string(hll.bucketN), sketch.String()+":"+string(other.bucketN), "union")
+			return nil, datasketch.NoCompatibleTypeError(hll.String()+":"+fmt.Sprint(hll.bucketN), sketch.String()+":"+fmt.Sprint(other.bucketN), "union")
 		}
 		newSk := NewHllSketch(uint(hll.bucketN)).(*HllSketch)
 		for i, otherMax := range other.buckets {

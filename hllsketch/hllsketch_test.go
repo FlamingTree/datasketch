@@ -1,10 +1,11 @@
 package hllsketch
 
 import (
-	"datasketch"
 	"fmt"
 	"strconv"
 	"testing"
+
+	"github.com/FlamingTree/datasketch"
 )
 
 func TestNewHllSketch(t *testing.T) {

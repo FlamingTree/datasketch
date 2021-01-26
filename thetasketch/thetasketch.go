@@ -2,7 +2,7 @@ package thetasketch
 
 import (
 	"bytes"
-	"datasketch"
+	"github.com/FlamingTree/datasketch"
 	"encoding/binary"
 	"fmt"
 	"github.com/spaolacci/murmur3"
